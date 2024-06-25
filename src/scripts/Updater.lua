@@ -102,9 +102,9 @@ function __PKGNAME__.Mupdate:UnregisterMupdateEventHandlers()
 end
 
 function __PKGNAME__.update()
-    local mupdate = require("__PKGNAME__.Mupdate")
-
-    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Initiating manual update.\n")
+    local version = getPackageInfo("__PKGNAME__", "version")
+    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Initiating manual update to currently installed version "..version..".\n")
+    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> If there is a new version, it will be downloaded and installed.\n")
     cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Full logging of update activity may be found in <u>Scripts</u> > <u>Errors</u>\n")
 
     __PKGNAME__.Mupdate:downloadLatestMupdate()
