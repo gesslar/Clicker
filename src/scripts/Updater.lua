@@ -139,5 +139,6 @@ __PKGNAME__.Mupdate.MudpateUninstallHandler = __PKGNAME__.MudpateUninstallHandle
             if package ~= "__PKGNAME__" then return end
             print("Uninstalling __PKGNAME__ Auto-Updater")
             deleteAllNamedEventHandlers(__PKGNAME__.Mupdate.tag)
+            deleteAllNamedTimers(__PKGNAME__.Mupdate.tag)
         end
     )
