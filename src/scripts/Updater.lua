@@ -139,6 +139,5 @@ __PKGNAME__.Mupdate.MudpateUninstallHandler = __PKGNAME__.MudpateUninstallHandle
             if package ~= "__PKGNAME__" then return end
             deleteAllNamedEventHandlers(__PKGNAME__.Mupdate.tag)
             deleteAllNamedTimers(__PKGNAME__.Mupdate.tag)
-            __PKGNAME__.Mupdate = nil
         end
     )
