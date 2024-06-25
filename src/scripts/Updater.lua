@@ -98,9 +98,6 @@ function __PKGNAME__.Mupdate:UnregisterMupdateEventHandlers()
     local existingHandlers = getNamedEventHandlers(self.tag) or {}
     for _, label in pairs(self.handler_events) do
         local result = deleteNamedEventHandler(self.tag, label)
-        if not result then
-            display("Failed to unregister: " .. label)
-        end
     end
 end
 
