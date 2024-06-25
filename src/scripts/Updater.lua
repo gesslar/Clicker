@@ -94,15 +94,6 @@ function __PKGNAME__.Mupdate:RegisterMupdateEventHandlers()
     end
 end
 
-function __PKGNAME__.update()
-    local mupdate = require("__PKGNAME__.Mupdate")
-
-    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Initiating manual update.\n")
-    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Full logging of update activity may be found in <u>Scripts</u> > <u>Errors</u>\n")
-
-    __PKGNAME__.Mupdate:downloadLatestMupdate()
-end
-
 function __PKGNAME__.Mupdate:UnregisterMupdateEventHandlers()
     local existingHandlers = getNamedEventHandlers(self.tag) or {}
     for _, label in pairs(self.handler_events) do
@@ -111,6 +102,15 @@ function __PKGNAME__.Mupdate:UnregisterMupdateEventHandlers()
             display("Failed to unregister: " .. label)
         end
     end
+end
+
+function __PKGNAME__.update()
+    local mupdate = require("__PKGNAME__.Mupdate")
+
+    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Initiating manual update.\n")
+    cecho(f"<chocolate>[[ __PKGNAME__ ]]<reset> Full logging of update activity may be found in <u>Scripts</u> > <u>Errors</u>\n")
+
+    __PKGNAME__.Mupdate:downloadLatestMupdate()
 end
 
 function __PKGNAME__.Mupdate:downloadLatestMupdate()
@@ -130,4 +130,17 @@ __PKGNAME__.Mupdate.MupdateLoadHandler = __PKGNAME__.MupdateLoadHandler or
         __PKGNAME__.Mupdate.tag..".Load", -- handler name
         "sysLoadEvent", -- event name
         function(event) __PKGNAME__.Mupdate:downloadLatestMupdate() end
+    )
+
+-- End it all
+__PKGNAME__.Mupdate.MudpateUninstallHandler = __PKGNAME__.MudpateUninstallHandler or
+    registerNamedEventHandler(
+        __PKGNAME__.Mupdate.tag, -- username
+        __PKGNAME__.Mupdate.tag..".Uninstall", -- handler name
+        "sysUninstall", -- event name
+        function(event, package)
+            if package ~= "__PKGNAME__" then return end
+            print("Uninstalling __PKGNAME__ Auto-Updater")
+            __PKGNAME__.Mupdate:UnregisterMupdateEventHandlers()
+        end
     )
