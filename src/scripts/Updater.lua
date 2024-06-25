@@ -128,16 +128,3 @@ __PKGNAME__.Mupdate.MupdateLoadHandler = __PKGNAME__.MupdateLoadHandler or
         "sysLoadEvent", -- event name
         function(event) __PKGNAME__.Mupdate:downloadLatestMupdate() end
     )
-
--- End it all - remove all event handlers and timers
-__PKGNAME__.Mupdate.MudpateUninstallHandler = __PKGNAME__.MudpateUninstallHandler or
-    registerNamedEventHandler(
-        __PKGNAME__.Mupdate.tag, -- username
-        __PKGNAME__.Mupdate.tag..".Uninstall", -- handler name
-        "sysUninstall", -- event name
-        function(event, package)
-            if package ~= "__PKGNAME__" then return end
-            deleteAllNamedEventHandlers(__PKGNAME__.Mupdate.tag)
-            deleteAllNamedTimers(__PKGNAME__.Mupdate.tag)
-        end
-    )
