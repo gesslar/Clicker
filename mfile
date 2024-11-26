@@ -1,9 +1,9 @@
 {
-  "package": "Click",
+  "package": "Clicker",
   "title": "Make URLs clickable",
-  "description": "Enable clickable links in Threshold! That's pretty nice, right?",
+  "description": "Enable clickable links in Mudlet! That's pretty nice, right?",
   "version": "1.7.0",
-  "author": "Gesslar@ThresholdRPG",
+  "author": "gesslar",
   "icon": "url.png",
   "dependencies": "",
   "outputFile": true

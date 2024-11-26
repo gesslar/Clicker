@@ -1,5 +1,6 @@
-# ThreshURL
-Enable clickable links in Threshold! That's pretty nice, right?
+# Clicker
+
+Enable clickable links in Mudlet! That's pretty nice, right?
 
 # Attribution
 
