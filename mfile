@@ -1,10 +1,10 @@
 {
-  "package": "ThreshURL",
+  "package": "Click",
   "title": "Make URLs clickable",
   "description": "Enable clickable links in Threshold! That's pretty nice, right?",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "author": "Gesslar@ThresholdRPG",
-  "icon": "griffon-right.jpg",
+  "icon": "url.png",
   "dependencies": "",
   "outputFile": true
 }
