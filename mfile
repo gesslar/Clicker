@@ -2,7 +2,7 @@
   "package": "Clicker",
   "title": "Make URLs clickable",
   "description": "Enable clickable links in Mudlet! That's pretty nice, right?",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "author": "gesslar",
   "icon": "url.png",
   "dependencies": "",
