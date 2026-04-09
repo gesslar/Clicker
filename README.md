@@ -2,6 +2,6 @@
 
 Enable clickable links in Mudlet! That's pretty nice, right?
 
-# Attribution
+## License
 
-[Url icons created by rcherem - Flaticon](https://www.flaticon.com/free-icons/url)
+`clicker` is released into the public domain under the [0BSD](LICENSE.txt).
