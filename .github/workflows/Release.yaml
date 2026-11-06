@@ -2,8 +2,8 @@ name: Release
 
 on:
   pull_request:
-    types: [closed]
-    branches: [main]
+    types: [ closed ]
+    branches: [ main ]
 
 jobs:
   release:
@@ -11,6 +11,7 @@ jobs:
     uses: gesslar/Maint/.github/workflows/ReleaseMudlet.yaml@main
     with:
       inject_mupdate: true
+      quality_check: ""
     secrets: inherit
     permissions:
       contents: write
